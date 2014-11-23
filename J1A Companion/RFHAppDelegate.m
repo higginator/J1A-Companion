@@ -8,14 +8,17 @@
 
 #import "RFHAppDelegate.h"
 #import "RFHLessonsTableViewController.h"
+#import "RFHLessonsNavigatonViewController.h"
 
 @implementation RFHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.colorArray = [[NSMutableArray alloc] initWithArray:ColorScheme(ColorSchemeAnalogous, FlatSkyBlue, YES)];
     // Override point for customization after application launch.
-    UINavigationController *lessonsUINC = [[UINavigationController alloc] init];
+    UINavigationController *lessonsUINC = [[RFHLessonsNavigatonViewController alloc] init];
+    self.uinc = lessonsUINC;
     RFHLessonsTableViewController *lessonsTableVC = [[RFHLessonsTableViewController alloc] init];
     [lessonsUINC pushViewController:lessonsTableVC animated:YES];
     self.window.rootViewController = lessonsUINC;

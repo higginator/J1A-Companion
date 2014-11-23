@@ -11,5 +11,7 @@
 @interface RFHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UINavigationController *uinc;
+@property (nonatomic, strong) NSArray *colorArray;
 
 @end

@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RFHVocabStore.h"
+#import "RFHVocabulary.h"
 
 @interface RFHLesson : NSObject
 
 @property (nonatomic, copy) NSString *lessonName;
 @property (nonatomic) int lessonNumber;
-@property (nonatomic, strong) RFHVocabStore *vocab;
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) RFHVocabulary *vocab;
 
 -(instancetype)initWithLessonNumber:(int)num;
 

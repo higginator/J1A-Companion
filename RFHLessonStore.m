@@ -7,11 +7,12 @@
 //
 
 #import "RFHLessonStore.h"
+#import "RFHLessonsViewController.h"
 #import "RFHLesson.h"
 
 @interface RFHLessonStore ()
 
-@property (nonatomic) NSMutableArray *privateItems;
+@property (nonatomic) NSMutableArray *privateLessonVCs;
 
 @end
 
@@ -38,7 +39,7 @@
 -(instancetype)initPrivate
 {
     if (self=[super init]) {
-        _privateItems = [[NSMutableArray alloc] init];
+        _privateLessonVCs = [[NSMutableArray alloc] init];
         [self createLessons];
     }
     return self;
@@ -48,18 +49,19 @@
 
 -(void)createLessons
 {
-    NSLog(@"Ive been called");
     for (int i = 0; i < 14; i++) {
         RFHLesson *lesson = [[RFHLesson alloc] initWithLessonNumber:i+1];
-        [self.privateItems addObject:lesson];
+        RFHLessonsViewController *lessonVC = [[RFHLessonsViewController alloc] initWithLesson:lesson];
+        [self.privateLessonVCs addObject:lessonVC];
     }
 }
 
+
 #pragma mark - Accessor Methods
 
--(NSArray *)allLessons
+-(NSArray *)allLessonVCs
 {
-    return self.privateItems;
+    return self.privateLessonVCs;
 }
 
 @end

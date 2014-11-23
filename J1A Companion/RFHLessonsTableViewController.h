@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ChameleonFramework/Chameleon.h>
 
 @interface RFHLessonsTableViewController : UITableViewController
+
 
 @end

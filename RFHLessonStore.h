@@ -10,7 +10,7 @@
 
 @interface RFHLessonStore : NSObject
 
-@property (nonatomic, readonly) NSArray *allLessons;
+@property (nonatomic, readonly) NSArray *allLessonVCs;
 
 +(instancetype)sharedStore;
 

@@ -7,11 +7,15 @@
 //
 
 #import "RFHLessonsTableViewController.h"
+#import "RFHLessonsViewController.h"
 #import "RFHLessonStore.h"
 #import "RFHLesson.h"
+#import "RFHAppDelegate.h"
 
 
 @interface RFHLessonsTableViewController ()
+
+@property (nonatomic, weak) RFHAppDelegate *mainDelegate;
 
 @end
 
@@ -28,6 +32,9 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         self.navigationItem.title = @"Lessons";
+        _mainDelegate = (RFHAppDelegate *)[[UIApplication sharedApplication] delegate];
+        self.view.backgroundColor = self.mainDelegate.colorArray[2];
+
     }
     return self;
 }
@@ -41,10 +48,19 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
-
+/*
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSIndexPath *selection = [self.tableView indexPathForSelectedRow];
+    if (selection) {
+        NSLog(@"in here");
+        [self.tableView deselectRowAtIndexPath:selection animated:YES];
+    }
+}
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,21 +78,55 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[[RFHLessonStore sharedStore] allLessons] count];
+    return [[[RFHLessonStore sharedStore] allLessonVCs] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    NSArray *lessons = [[RFHLessonStore sharedStore] allLessons];
-    RFHLesson *lesson = lessons[indexPath.row];
-    cell.textLabel.text = lesson.lessonName;
+    NSArray *lessonVCs = [[RFHLessonStore sharedStore] allLessonVCs];
+    RFHLessonsViewController *lessonVC = lessonVCs[indexPath.row];
+    cell.textLabel.text = lessonVC.lesson.lessonName;
+    //cell.backgroundColor = GradientColor(UIGradientStyleLeftToRight, cell.frame, (@[FlatWhite, FlatBlue]));
+    cell.backgroundColor = self.mainDelegate.colorArray[2];
+    cell.textLabel.textColor = [UIColor colorWithContrastingBlackOrWhiteColorOn:self.mainDelegate.colorArray[2] isFlat:YES];
     // Configure the cell...
     
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor flatSkyBlueColor];
+}
+
+-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];
+    NSArray *lessonVCs = [[RFHLessonStore sharedStore] allLessonVCs];
+    RFHLessonsViewController *lessonVC = lessonVCs[indexPath.row];
+    [self.mainDelegate.uinc pushViewController:lessonVC animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor flatSkyBlueColor];
+}
 
 /*
 // Override to support conditional editing of the table view.

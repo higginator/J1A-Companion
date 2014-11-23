@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0243F9AC-D5C2-4662-AFB3-4D03D7C558DB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>J1A Companion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>04A6B7E7-7B27-42D1-B230-7803C837E1B6</key>
+		<string>https://github.com/ghear/J1A-Companion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>J1A Companion.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>04A6B7E7-7B27-42D1-B230-7803C837E1B6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ghear/J1A-Companion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>04A6B7E7-7B27-42D1-B230-7803C837E1B6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>04A6B7E7-7B27-42D1-B230-7803C837E1B6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>J1A Companion</string>
+		</dict>
+	</array>
+</dict>
+</plist>

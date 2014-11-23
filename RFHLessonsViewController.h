@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RFHLesson.h"
 
-@interface RFHLessonsViewController : UIViewController
+@interface RFHLessonsViewController : UITableViewController
 
+@property (nonatomic, strong) RFHLesson *lesson;
+
+-(instancetype)initWithLesson:(RFHLesson *)lesson;
 @end
