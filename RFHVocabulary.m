@@ -7,8 +7,12 @@
 //
 
 #import "RFHVocabulary.h"
+#import "RFHDefinitions.h"
+#import "RFHDefinitionsViewController.h"
 
 @interface RFHVocabulary ()
+
+@property (nonatomic, strong) NSMutableArray *privateItems;
 
 @end
 
@@ -18,9 +22,23 @@
 {
     if (self = [super init]) {
         _name = @"Vocabulary";
+        _items = [[NSArray alloc] init];
+        _privateItems = [[NSMutableArray alloc] init];
+        [self createItems];
     }
     return self;
 }
 
+-(void)createItems
+{
+    RFHDefinitions *definitions = [[RFHDefinitions alloc] init];
+    RFHDefinitionsViewController *definitionVC = [[RFHDefinitionsViewController alloc] initWithDefinitions:definitions];
+    [self.privateItems addObject:definitionVC];
+}
+
+-(NSArray *)items
+{
+    return self.privateItems;
+}
 
 @end

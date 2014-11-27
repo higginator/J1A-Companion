@@ -1,45 +1,45 @@
 //
-//  RFHVocabularyViewController.m
+//  RFHDefinitionsViewController.m
 //  J1A Companion
 //
-//  Created by Ryan Higgins on 11/22/14.
+//  Created by Ryan Higgins on 11/27/14.
 //  Copyright (c) 2014 Higgnet. All rights reserved.
 //
 
-#import "RFHVocabularyViewController.h"
+#import "RFHDefinitionsViewController.h"
 #import "RFHAppDelegate.h"
 
-@interface RFHVocabularyViewController ()
+@interface RFHDefinitionsViewController ()
 
 @property (nonatomic, weak) RFHAppDelegate *mainDelegate;
 
 @end
 
-@implementation RFHVocabularyViewController
+@implementation RFHDefinitionsViewController
 
--(instancetype)initWithVocab: (RFHVocabulary *)vocab
+
+-(instancetype)initWithDefinitions:(RFHDefinitions *)definitions
 {
     if (self = [super init]) {
-        _vocab = vocab;
-        _name = @"Vocabulary";
+        _name = @"Definitions";
+        _definitions = definitions;
         _mainDelegate = (RFHAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.view.backgroundColor = self.mainDelegate.colorArray[2];
     }
     return self;
 }
 
+-(instancetype)init
+{
+    @throw [NSException exceptionWithName:@"wrong initializer" reason:@"use -initWithDefinition" userInfo:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Do any additional setup after loading the view.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
-
 
 #pragma mark - Table view data source
 
@@ -52,16 +52,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.vocab.items count];
+    return [self.definitions.items count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"in here");
-    NSLog(@"%@", self.vocab.items);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    id item = self.vocab.items[indexPath.row];
+    id item = self.definitions.items[indexPath.row];
     cell.textLabel.text = [item name];
     cell.backgroundColor = self.mainDelegate.colorArray[2];
     // Configure the cell...
@@ -92,8 +89,5 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor = self.mainDelegate.colorArray[2];
 }
-
-
-
 
 @end

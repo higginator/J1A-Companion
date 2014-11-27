@@ -7,6 +7,7 @@
 //
 
 #import "RFHLessonsViewController.h"
+#import "RFHVocabularyViewController.h"
 #import "RFHAppDelegate.h"
 
 @interface RFHLessonsViewController ()
@@ -15,11 +16,15 @@
 
 @end
 
+#define VOCABULARY 0
+#define KANJI 1
+#define GRAMMAR 2
+
 @implementation RFHLessonsViewController
 
 -(instancetype)init
 {
-    @throw [NSException exceptionWithName:@"Wrong initializer" reason:@"use +initWithLesson" userInfo:nil];
+    @throw [NSException exceptionWithName:@"Wrong initializer" reason:@"use -initWithLesson" userInfo:nil];
 }
 
 -(instancetype)initWithLesson:(RFHLesson *)lesson
@@ -79,6 +84,8 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];
+    id item = self.lesson.items[indexPath.row];
+    [self.mainDelegate.uinc pushViewController:item animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

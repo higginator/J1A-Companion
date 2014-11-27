@@ -10,6 +10,8 @@
 		3315259D1A213A1000919A5F /* RFHLessonsNavigatonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3315259C1A213A1000919A5F /* RFHLessonsNavigatonViewController.m */; };
 		331525A31A21866F00919A5F /* RFHVocabularyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525A21A21866F00919A5F /* RFHVocabularyViewController.m */; };
 		331525A61A21869600919A5F /* RFHVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525A51A21869600919A5F /* RFHVocabulary.m */; };
+		331525A91A278DDC00919A5F /* RFHDefinitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */; };
+		331525AC1A278ED400919A5F /* RFHDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525AB1A278ED400919A5F /* RFHDefinitions.m */; };
 		33DAF73B1A1C6D8700314D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73A1A1C6D8700314D92 /* Foundation.framework */; };
 		33DAF73D1A1C6D8700314D92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73C1A1C6D8700314D92 /* CoreGraphics.framework */; };
 		33DAF73F1A1C6D8700314D92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73E1A1C6D8700314D92 /* UIKit.framework */; };
@@ -50,6 +52,10 @@
 		331525A21A21866F00919A5F /* RFHVocabularyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHVocabularyViewController.m; sourceTree = "<group>"; };
 		331525A41A21869600919A5F /* RFHVocabulary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFHVocabulary.h; sourceTree = "<group>"; };
 		331525A51A21869600919A5F /* RFHVocabulary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHVocabulary.m; sourceTree = "<group>"; };
+		331525A71A278DDC00919A5F /* RFHDefinitionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFHDefinitionsViewController.h; sourceTree = "<group>"; };
+		331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHDefinitionsViewController.m; sourceTree = "<group>"; };
+		331525AA1A278ED400919A5F /* RFHDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFHDefinitions.h; sourceTree = "<group>"; };
+		331525AB1A278ED400919A5F /* RFHDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHDefinitions.m; sourceTree = "<group>"; };
 		33DAF7371A1C6D8700314D92 /* J1A Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "J1A Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DAF73A1A1C6D8700314D92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33DAF73C1A1C6D8700314D92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +122,10 @@
 				331525A51A21869600919A5F /* RFHVocabulary.m */,
 				33DAF76F1A1C70E400314D92 /* RFHLesson.h */,
 				33DAF7701A1C70E400314D92 /* RFHLesson.m */,
+				331525A71A278DDC00919A5F /* RFHDefinitionsViewController.h */,
+				331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */,
+				331525AA1A278ED400919A5F /* RFHDefinitions.h */,
+				331525AB1A278ED400919A5F /* RFHDefinitions.m */,
 				33DAF7751A1C721300314D92 /* RFHLessonStore.h */,
 				33DAF7761A1C721300314D92 /* RFHLessonStore.m */,
 				33DAF7721A1C718700314D92 /* RFHVocabStore.h */,
@@ -334,6 +344,7 @@
 				33DAF7471A1C6D8700314D92 /* main.m in Sources */,
 				33DAF76B1A1C6DD500314D92 /* RFHLessonsViewController.m in Sources */,
 				33DAF7771A1C721300314D92 /* RFHLessonStore.m in Sources */,
+				331525AC1A278ED400919A5F /* RFHDefinitions.m in Sources */,
 				3315259D1A213A1000919A5F /* RFHLessonsNavigatonViewController.m in Sources */,
 				33DAF76E1A1C6EF000314D92 /* RFHLessonsTableViewController.m in Sources */,
 				33DAF74B1A1C6D8700314D92 /* RFHAppDelegate.m in Sources */,
@@ -341,6 +352,7 @@
 				33DAF7741A1C718700314D92 /* RFHVocabStore.m in Sources */,
 				331525A61A21869600919A5F /* RFHVocabulary.m in Sources */,
 				33DAF7711A1C70E400314D92 /* RFHLesson.m in Sources */,
+				331525A91A278DDC00919A5F /* RFHDefinitionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,5 +11,6 @@
 @interface RFHVocabulary : NSObject
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSArray *items;
 
 @end
