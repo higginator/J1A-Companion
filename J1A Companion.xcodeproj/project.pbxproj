@@ -12,6 +12,7 @@
 		331525A61A21869600919A5F /* RFHVocabulary.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525A51A21869600919A5F /* RFHVocabulary.m */; };
 		331525A91A278DDC00919A5F /* RFHDefinitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */; };
 		331525AC1A278ED400919A5F /* RFHDefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525AB1A278ED400919A5F /* RFHDefinitions.m */; };
+		331525AF1A27CFFF00919A5F /* RFHDefinitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331525AE1A27CFFF00919A5F /* RFHDefinitionView.m */; };
 		33DAF73B1A1C6D8700314D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73A1A1C6D8700314D92 /* Foundation.framework */; };
 		33DAF73D1A1C6D8700314D92 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73C1A1C6D8700314D92 /* CoreGraphics.framework */; };
 		33DAF73F1A1C6D8700314D92 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DAF73E1A1C6D8700314D92 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHDefinitionsViewController.m; sourceTree = "<group>"; };
 		331525AA1A278ED400919A5F /* RFHDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFHDefinitions.h; sourceTree = "<group>"; };
 		331525AB1A278ED400919A5F /* RFHDefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHDefinitions.m; sourceTree = "<group>"; };
+		331525AD1A27CFFF00919A5F /* RFHDefinitionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFHDefinitionView.h; sourceTree = "<group>"; };
+		331525AE1A27CFFF00919A5F /* RFHDefinitionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFHDefinitionView.m; sourceTree = "<group>"; };
 		33DAF7371A1C6D8700314D92 /* J1A Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "J1A Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DAF73A1A1C6D8700314D92 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33DAF73C1A1C6D8700314D92 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				331525A81A278DDC00919A5F /* RFHDefinitionsViewController.m */,
 				331525AA1A278ED400919A5F /* RFHDefinitions.h */,
 				331525AB1A278ED400919A5F /* RFHDefinitions.m */,
+				331525AD1A27CFFF00919A5F /* RFHDefinitionView.h */,
+				331525AE1A27CFFF00919A5F /* RFHDefinitionView.m */,
 				33DAF7751A1C721300314D92 /* RFHLessonStore.h */,
 				33DAF7761A1C721300314D92 /* RFHLessonStore.m */,
 				33DAF7721A1C718700314D92 /* RFHVocabStore.h */,
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33DAF7471A1C6D8700314D92 /* main.m in Sources */,
+				331525AF1A27CFFF00919A5F /* RFHDefinitionView.m in Sources */,
 				33DAF76B1A1C6DD500314D92 /* RFHLessonsViewController.m in Sources */,
 				33DAF7771A1C721300314D92 /* RFHLessonStore.m in Sources */,
 				331525AC1A278ED400919A5F /* RFHDefinitions.m in Sources */,

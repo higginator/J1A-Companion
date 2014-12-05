@@ -24,6 +24,7 @@
     self.window.rootViewController = lessonsUINC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    self.GREEN = YES;
     return YES;
 }
 

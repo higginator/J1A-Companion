@@ -22,6 +22,7 @@
     if (self = [super init]) {
         _vocab = vocab;
         _name = @"Vocabulary";
+        self.navigationItem.title = _name;
         _mainDelegate = (RFHAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.view.backgroundColor = self.mainDelegate.colorArray[2];
     }
@@ -58,8 +59,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"in here");
-    NSLog(@"%@", self.vocab.items);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     id item = self.vocab.items[indexPath.row];
     cell.textLabel.text = [item name];
@@ -85,6 +84,8 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];
+    id item = self.vocab.items[indexPath.row];
+    [self.mainDelegate.uinc pushViewController:item animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

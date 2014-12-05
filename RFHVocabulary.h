@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSArray *items;
 
+-(instancetype)initWithLessonNumber:(int)lesson;
+
 @end

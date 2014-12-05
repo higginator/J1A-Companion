@@ -8,6 +8,7 @@
 
 #import "RFHDefinitionsViewController.h"
 #import "RFHAppDelegate.h"
+#import "RFHDefinitionView.h"
 
 @interface RFHDefinitionsViewController ()
 
@@ -23,8 +24,35 @@
     if (self = [super init]) {
         _name = @"Definitions";
         _definitions = definitions;
+        self.navigationItem.title = _name;
         _mainDelegate = (RFHAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.view.backgroundColor = self.mainDelegate.colorArray[2];
+        
+        CGRect scrollFrame = self.mainDelegate.window.bounds;
+        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:scrollFrame];
+        scrollView.backgroundColor = self.mainDelegate.colorArray[2];
+        CGRect bigFrame = scrollFrame;
+        bigFrame.size.width *= [self.definitions.wordsInEnglish count];
+        scrollView.contentSize = bigFrame.size;
+        self.view = scrollView;
+        scrollView.pagingEnabled = YES;
+        for (int i=0; i < [self.definitions.wordsInEnglish count]; i++) {
+            scrollFrame.origin.x += scrollFrame.size.width;
+            NSString *englishWord = self.definitions.wordsInEnglish[i];
+            NSString *hiraganaWord = self.definitions.wordsInHiragana[i];
+            RFHDefinitionView *wordView = [[RFHDefinitionView alloc] initWithFrame:scrollFrame scrollView:scrollView frameNumber:i englishWord:englishWord hiraganaWord:hiraganaWord];
+            [scrollView addSubview:wordView];
+        }
+        
+        /*
+        [self.window addSubview:scrollView];
+        [scrollView addSubview:self.bigHypnoView];
+        
+        scrollFrame.origin.x += scrollFrame.size.width;
+        BNRHypnosisView *hypView2 = [[BNRHypnosisView alloc] initWithFrame:scrollFrame];
+        [scrollView addSubview:hypView2];
+        scrollView.pagingEnabled = YES;
+         */
     }
     return self;
 }
@@ -34,6 +62,10 @@
     @throw [NSException exceptionWithName:@"wrong initializer" reason:@"use -initWithDefinition" userInfo:nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -81,7 +113,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];
+    cell.contentView.backgroundColor = self.mainDelegate.colorArray[1];   
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

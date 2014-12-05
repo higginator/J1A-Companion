@@ -38,7 +38,7 @@
 
 -(void)createItems
 {
-    RFHVocabulary *vocab = [[RFHVocabulary alloc] init];
+    RFHVocabulary *vocab = [[RFHVocabulary alloc] initWithLessonNumber:self.lessonNumber];
     RFHVocabularyViewController *vocabVC = [[RFHVocabularyViewController alloc] initWithVocab:vocab];
     [self.privateItems addObject:vocabVC];
 }

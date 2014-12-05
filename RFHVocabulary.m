@@ -20,18 +20,23 @@
 
 -(instancetype)init
 {
+    @throw [NSException exceptionWithName:@"wrong initializer" reason:@"use -initWithLessonNumber" userInfo:nil];
+}
+
+-(instancetype)initWithLessonNumber:(int)lesson
+{
     if (self = [super init]) {
         _name = @"Vocabulary";
         _items = [[NSArray alloc] init];
         _privateItems = [[NSMutableArray alloc] init];
-        [self createItems];
+        [self createItemsWithLessonNumber:lesson];
     }
     return self;
 }
 
--(void)createItems
+-(void)createItemsWithLessonNumber:(int)lesson
 {
-    RFHDefinitions *definitions = [[RFHDefinitions alloc] init];
+    RFHDefinitions *definitions = [[RFHDefinitions alloc] initWithLessonNumber:lesson];
     RFHDefinitionsViewController *definitionVC = [[RFHDefinitionsViewController alloc] initWithDefinitions:definitions];
     [self.privateItems addObject:definitionVC];
 }
