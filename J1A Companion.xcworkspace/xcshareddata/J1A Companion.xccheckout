@@ -12,20 +12,24 @@
 	<dict>
 		<key>04A6B7E7-7B27-42D1-B230-7803C837E1B6</key>
 		<string>https://github.com/ghear/J1A-Companion.git</string>
+		<key>07F814F301E1574EF90C17ACF0622CE5787C1386</key>
+		<string>https://github.com/ghear/J1A-Companion.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>J1A Companion.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>04A6B7E7-7B27-42D1-B230-7803C837E1B6</key>
+		<string>../../J1A Companion</string>
+		<key>07F814F301E1574EF90C17ACF0622CE5787C1386</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ghear/J1A-Companion.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>04A6B7E7-7B27-42D1-B230-7803C837E1B6</string>
+	<string>07F814F301E1574EF90C17ACF0622CE5787C1386</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>04A6B7E7-7B27-42D1-B230-7803C837E1B6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>J1A Companion</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07F814F301E1574EF90C17ACF0622CE5787C1386</string>
+			<key>IDESourceControlWCCName</key>
+			<string>J1A%20Companion</string>
 		</dict>
 	</array>
 </dict>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RFHDefinitions.h"
 
-@interface RFHDefinitionsViewController : UITableViewController
+@interface RFHDefinitionsViewController : UITableViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) RFHDefinitions *definitions;

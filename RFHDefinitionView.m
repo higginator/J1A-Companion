@@ -17,7 +17,7 @@
 
 @implementation RFHDefinitionView
 
--(instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView frameNumber:(int)num englishWord:(NSString *)englishWord hiraganaWord:(NSString *)hiraganaWord
+-(instancetype)initWithFrame:(CGRect)frame scrollView:(UIScrollView *)scrollView navItem:(UINavigationItem *)navItem frameNumber:(int)num englishWord:(NSString *)englishWord hiraganaWord:(NSString *)hiraganaWord wordListOrder:(int)i
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -27,6 +27,8 @@
         self.hiraganaWord = hiraganaWord;
         self.frameNumber = num;
         self.scrollView = scrollView;
+        self.navItem = navItem;
+        self.wordListOrder = i;
     }
     return self;
 }
@@ -36,34 +38,22 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-        CGRect aRect = CGRectMake(50 + 320 * self.frameNumber, 100, 250, 100);
-        CGRect bRect = CGRectMake(50 + 320 * self.frameNumber, 300, 250, 100);
-        UILabel *englishWord = [[UILabel alloc] initWithFrame:aRect];
-        englishWord.text = self.englishWord;
-        UILabel *hiraganaWord = [[UILabel alloc] initWithFrame:bRect];
-        hiraganaWord.text = self.hiraganaWord;
-        [self.scrollView addSubview:englishWord];
-        [self.scrollView addSubview:hiraganaWord];
-    // Drawing code
-    /*
-    CGRect bounds = self.bounds;
-    CGPoint center;
-    center.x = bounds.origin.x + bounds.size.width / 2.0;
-    center.y = bounds.origin.y + bounds.size.height / 2.0;
-    float maxRadius = hypotf(bounds.size.width, bounds.size.height) / 2.0;
-    UIBezierPath *path = [[UIBezierPath alloc] init];
-    for (float currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
-        [path moveToPoint:CGPointMake(center.x + currentRadius, center.y)];
-        [path addArcWithCenter:center
-                        radius:currentRadius
-                    startAngle:0
-                      endAngle:M_PI * 2.0
-                     clockwise:YES];
-    }
-    path.lineWidth = 10;
-    [path stroke];
-     */
+    CGRect aRect = CGRectMake(50 + 320 * self.frameNumber, 100, 250, 100);
+    CGRect bRect = CGRectMake(50 + 320 * self.frameNumber, 300, 250, 100);
+    UILabel *englishWord = [[UILabel alloc] initWithFrame:aRect];
+    englishWord.text = self.englishWord;
+    UILabel *hiraganaWord = [[UILabel alloc] initWithFrame:bRect];
+    hiraganaWord.text = self.hiraganaWord;
+    [self.scrollView addSubview:englishWord];
+    [self.scrollView addSubview:hiraganaWord];
+
+    NSString *position = [NSString stringWithFormat:@"%d/9", self.wordListOrder];
+    CGRect orderRect = CGRectMake(250 + 320 * self.frameNumber, 50, 250, 100);
+    UILabel *orderPosition = [[UILabel alloc] initWithFrame:orderRect];
+    orderPosition.text = position;
+    [self.scrollView addSubview:orderPosition];
 }
+
 
 
 @end

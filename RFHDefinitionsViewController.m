@@ -25,10 +25,13 @@
         _name = @"Definitions";
         _definitions = definitions;
         self.navigationItem.title = _name;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
         _mainDelegate = (RFHAppDelegate *)[[UIApplication sharedApplication] delegate];
         self.view.backgroundColor = self.mainDelegate.colorArray[2];
         
         CGRect scrollFrame = self.mainDelegate.window.bounds;
+        scrollFrame.size.height -= 100;
+        NSLog(@"%f %f %f %f", scrollFrame.size.height, scrollFrame.size.width, scrollFrame.origin.x, scrollFrame.origin.y);
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:scrollFrame];
         scrollView.backgroundColor = self.mainDelegate.colorArray[2];
         CGRect bigFrame = scrollFrame;
@@ -40,38 +43,30 @@
             scrollFrame.origin.x += scrollFrame.size.width;
             NSString *englishWord = self.definitions.wordsInEnglish[i];
             NSString *hiraganaWord = self.definitions.wordsInHiragana[i];
-            RFHDefinitionView *wordView = [[RFHDefinitionView alloc] initWithFrame:scrollFrame scrollView:scrollView frameNumber:i englishWord:englishWord hiraganaWord:hiraganaWord];
+            RFHDefinitionView *wordView = [[RFHDefinitionView alloc] initWithFrame:scrollFrame scrollView:scrollView navItem:self.navigationItem frameNumber:i englishWord:englishWord hiraganaWord:hiraganaWord wordListOrder:i+1];
             [scrollView addSubview:wordView];
         }
         
-        /*
-        [self.window addSubview:scrollView];
-        [scrollView addSubview:self.bigHypnoView];
-        
-        scrollFrame.origin.x += scrollFrame.size.width;
-        BNRHypnosisView *hypView2 = [[BNRHypnosisView alloc] initWithFrame:scrollFrame];
-        [scrollView addSubview:hypView2];
-        scrollView.pagingEnabled = YES;
-         */
     }
     return self;
 }
+
+
 
 -(instancetype)init
 {
     @throw [NSException exceptionWithName:@"wrong initializer" reason:@"use -initWithDefinition" userInfo:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
+
 
 #pragma mark - Table view data source
 
